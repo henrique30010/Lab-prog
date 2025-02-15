@@ -16,11 +16,7 @@ int medirtamanho(char *str){
 
 int main(){
 
-    char *str = NULL;
-    size_t max_size = TAM_MAX;
-    size_t a_size;
-
-    str = (char *)malloc(max_size * sizeof(char));
+    char *str = (char *)malloc(TAM_MAX * sizeof(char));
 
     if (str == NULL){
         printf("Erro na alocação da memória\n");
@@ -31,11 +27,6 @@ int main(){
     fgets(str, TAM_MAX, stdin);
     str[strcspn(str, "\n")] = '\0';
 
-    a_size = medirtamanho(str);
-    if(str[a_size] == '\n'){
-        str[a_size] = '\0';
-    }
-
     int size = medirtamanho(str);
 
     printf("O tamanho da string é: %d\n", size);
@@ -44,4 +35,4 @@ int main(){
 
 
     return 0;
-} // olhar se tem redundancia dps!!!!!!!!!!!!!!!!!!!!!!!!!
+} 
